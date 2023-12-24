@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignIn</title>
+    <title>WebDevelopmentBootcamp</title>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+    <div class="container">
+        
+        <div class="left">
+            
+        </div>
+        <div class="right">
+            <form action="/login">
+                <h1>Sign In</h1>
+                <div class="email">
+                    <label for="emailId">E-Mail ID:-</label>
+                    <input type="email" name="" id="" placeholder="Enter your E-Mail ID" required>
+                </div>
+                <div class="password">
+                    <label for="password">Password:-</label>
+                    <input type="password" name="" id="password" name="password" placeholder="Enter your Password" required>
+                    <!-- <input type="password" name="password" id="password" placeholder="Your Password"> -->
+                    <button id="togglePassword" type="button">👁️</button>
+
+
+                </div>
+                <input type="submit" value="Submit"id="submitForm">
+                <p class="text">If you dont have an account. <a href="signup.html">Click Here</a> to create new account.</p>
+            </form>
+        </div>
+    </div>
+    <script>
+        const passwordInput = document.getElementById('password');
+        const toggleButton = document.getElementById('togglePassword');
     
+        toggleButton.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+           
+            
+    
+           
+            toggleButton.textContent = type === 'password' ? '👁️' : '👁️';
+        });
+    </script>
 </body>
 </html>
